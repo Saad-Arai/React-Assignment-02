@@ -108,7 +108,7 @@ function HomeScreen({ navigation }) {
         {
 
           taskItems.map((item, index) => {
-            return searchQuery.length < 1 ? <TouchableOpacity key={index} onPress={() => JSON.parse(item[1])['isComplete'] ? null : navigation.navigate('CompleteTask', { title: item[0], desc: JSON.parse(item[1])['desc'], isComplete: JSON.parse(item[1])['isComplete'] })}>
+            return searchQuery.length < 1 ? <TouchableOpacity key={index} onPress={() => JSON.parse(item[1])['isComplete'] ? null : navigation.navigate('Task Completed', { title: item[0], desc: JSON.parse(item[1])['desc'], isComplete: JSON.parse(item[1])['isComplete'] })}>
               <Task title={item[0]} desc={JSON.parse(item[1])['desc']} isComplete={JSON.parse(item[1])['isComplete']} />
             </TouchableOpacity> : searchTask(searchQuery)
           })
@@ -135,7 +135,7 @@ function App({ navigation }) {
           }}
         />
         <Stack.Screen name="AddTask" component={AddingTask} />
-        <Stack.Screen name="CompleteTask" component={TaskView} />
+        <Stack.Screen name="Task Completed" component={TaskView} />
       </Stack.Navigator>
     </NavigationContainer>
   );

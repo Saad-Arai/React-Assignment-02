@@ -11,7 +11,7 @@ function TaskView({ route, navigation }) {
         navigation.setOptions({
             headerRight: () => (<View style={styles.appbarButtonView}><IconButton
                 icon="check-circle"
-                color={Colors.amber300}
+                color={Colors.black}
                 size={30}
                 onPress={() => {
                     toogle();
